@@ -46,41 +46,37 @@ a {
     text-decoration: none;
 }
 
-container {
+.container {
     max-width: 1440px;
-}
-
-header {
-    background-image: url(./images/desktop/image-header.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 80vh;
-    color: var(--white);
-}
-
-header h1 {
-    text-align: center;
-    margin-top: 10%;
-    font-family: 'Fraunces', serif;
-    font-weight: 900;
-    font-size: 56px;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
-
-nav {
-    border: 2px solid pink;
-    width: 40%;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 34px 40px;
-    border: 2px solid red;
+    padding: 40px 46px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    width: 170px;
+}
+
+nav {
+    display: none;
+}
+
+@media (min-width: 800px) {
+    nav {  
+        width: 60%;
+        display: block;
+    }
+}
+@media (min-width: 1150px) {
+    nav {
+        width: 40%;
+        display: block;
+    }  
 }
 
 .menu {
@@ -90,4 +86,53 @@ nav {
 
 .menu a {
     color: inherit;
+}
+
+.menu .btn a{
+    color: inherit;
+    font-family: 'Fraunces', serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--very-dark-desaturated-blue);
+    padding: 1em 2rem;
+    background-color: var(--white);
+    border-radius: 100px;
+}
+
+.menu .btn:hover a{
+    background-color: rgb(119, 205, 245);
+    color: inherit;
+ }
+
+header {
+    background-image: url(./images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: 100vh;
+    max-height: 800px;
+    color: var(--white);
+    position: relative;
+}
+
+header h1 {
+    text-align: center;
+    padding-top: 1em;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 56px;
+    text-transform: uppercase;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+@media (min-width: 800px) {
+    .arrow {  
+        transform: translateX(-50%) translateY(-50%);
+    }
 }
