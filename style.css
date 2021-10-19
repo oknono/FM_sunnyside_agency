@@ -198,7 +198,6 @@ header h1 {
     }
 }
 
-
 .arrow {
     position: absolute;
     top: 53%;
@@ -234,19 +233,21 @@ header h1 {
 }
 
 .content {
-    padding: 120px;
-    height: 600px;
+    padding: 64px 24px;
 }
 
-.image {
-    height: 600px;
+.content a {
+    display: block;
+}
+
+.content > * {
+    text-align: center;
 }
 
 .row h2 {
     font-family: 'Fraunces', serif;
     font-weight: 900;
     font-size: 40px;
-    text-align: center;
     color:  var(--header-text);
 }
 
@@ -265,8 +266,20 @@ header h1 {
     .swap {
         order:-1; 
     }
+    .content {
+        padding: 120px;
+    }
+    .single .content {
+        margin: 0 auto;
+        padding: 360px 160px 60px 160px;
+        text-align:center;
+        font-size: 16px;
+    }
 }
 
+.single {
+    background-position: center;
+}
 .single .content {
     margin: 0 auto;
     padding-top: 300px;
@@ -282,4 +295,23 @@ header h1 {
     background-image: url(./images/desktop/image-photography.jpg);
     background-size: cover;
     color:  var(--text-photography);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery > * {
+    width: 50%
+}
+
+@media (min-width: 800px) {
+    gallery {
+        flex-direction: column;
+    }
+    
+    .gallery > * {
+        width: 25%
+    }
 }
