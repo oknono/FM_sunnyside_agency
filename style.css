@@ -53,7 +53,8 @@ a {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 40px 46px;
+    align-items: center;
+    padding: 32px 24px;
 }
 
 .logo {
@@ -62,45 +63,99 @@ a {
     width: 170px;
 }
 
-nav {
-    display: none;
+nav.desktop {
+    display: none
+}
+
+nav.mobile.active {
+    width: calc(100% - 48px);
+    background-color: var(--white);
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+}
+
+nav.mobile {
+  display: none;
+}
+
+.mobile-icon {
+    border: none;
+    background: transparent;
 }
 
 @media (min-width: 800px) {
-    nav {  
+    .navbar {
+        padding: 40px 46px;
+    }
+
+    nav.desktop {  
         width: 60%;
         display: block;
     }
+    
+    nav.mobile,
+    .mobile-icon  {
+        display: none;
+    }
 }
 @media (min-width: 1150px) {
-    nav {
+    nav.desktop {
         width: 40%;
-        display: block;
     }  
+} 
+
+nav.mobile::after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: 0px;
+    border: 25px solid transparent;
+    border-right-color: transparent;
+    border-right-color: var(--white);
+}
+.mobile_menu > li {
+    text-align: center;
+    padding: 1em;
 }
 
-.menu {
+.mobile_menu > li.btn {
+    padding-bottom: 2em;;
+}
+
+.mobile_menu a {
+    color: var(--dark-gray-blue);
+}
+.desktop_menu {
     display: flex;
     justify-content: space-between;
 }
-
-.menu a {
+.desktop_menu a {
     color: inherit;
 }
 
-.menu .btn a{
-    color: inherit;
+.btn a{ 
     font-family: 'Fraunces', serif;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    color: var(--very-dark-desaturated-blue);
     padding: 1em 2rem;
-    background-color: var(--white);
-    border-radius: 100px;
+    border-radius: 100px; 
 }
 
-.menu .btn:hover a{
+.desktop_menu .btn a{
+    color: var(--very-dark-desaturated-blue);
+    background-color: var(--white);
+}
+
+.mobile_menu .btn a{ 
+    background-color: var(--accent-yellow);
+    color: var(--very-dark-desaturated-blue);
+}
+
+.desktop_menu .btn:hover a{
     background-color: rgb(119, 205, 245);
     color: inherit;
  }

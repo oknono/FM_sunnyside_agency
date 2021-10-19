@@ -19,8 +19,17 @@
     <header>
       <div class="navbar">  
         <div class="logo"><img src="./images/logo.svg" alt=""></div>
-        <nav>
-          <ul class="menu">
+        <button id="menu" class="mobile-icon"><img src="./images/icon-hamburger.svg" alt=""></button>
+        <nav class="desktop">
+          <ul class="desktop_menu">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li class="btn"><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+        <nav class="mobile">
+          <ul class="mobile_menu">
             <li><a href="#">About</a></li>
             <li><a href="#">Services</a></li>
             <li><a href="#">Projects</a></li>
@@ -114,5 +123,10 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div>
+  <script>
+    let menu_button = document.querySelector('#menu');
+    let mobile_menu = document.querySelector('.mobile');
+    menu_button.addEventListener('click', () => mobile_menu.classList.toggle('active'));
+  </script>
 </body>
 </html>
