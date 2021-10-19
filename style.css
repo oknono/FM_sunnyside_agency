@@ -48,13 +48,14 @@ a {
 
 .container {
     max-width: 1440px;
+    overflow: hidden;
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 32px 24px;
+    padding-top: 32px;
 }
 
 .logo {
@@ -84,11 +85,12 @@ nav.mobile {
 .mobile-icon {
     border: none;
     background: transparent;
+    padding: 0;
 }
 
 @media (min-width: 800px) {
     .navbar {
-        padding: 40px 46px;
+        padding-top: 34px;
     }
 
     nav.desktop {  
@@ -97,6 +99,7 @@ nav.mobile {
     }
     
     nav.mobile,
+    nav.mobile.active,
     .mobile-icon  {
         display: none;
     }
@@ -108,11 +111,12 @@ nav.mobile {
 } 
 
 nav.mobile::after {
+    --icon-size: 24px;
     content: "";
     position: absolute;
-    top: -25px;
+    top: calc(-1 * var(--icon-size));
     right: 0px;
-    border: 25px solid transparent;
+    border: var(--icon-size) solid transparent;
     border-right-color: transparent;
     border-right-color: var(--white);
 }
@@ -161,33 +165,49 @@ nav.mobile::after {
  }
 
 header {
-    background-image: url(./images/desktop/image-header.jpg);
+    background-image: url(./images/mobile/image-header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-x: center;
-    height: 100vh;
+    background-position: bottom center;
+    height: 66vh;
     max-height: 800px;
     color: var(--white);
     position: relative;
+    padding: 0 24px;
 }
+
 
 header h1 {
     text-align: center;
     padding-top: 1em;
     font-family: 'Fraunces', serif;
     font-weight: 900;
-    font-size: 56px;
+    font-size: 40px;
     text-transform: uppercase;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+    letter-spacing: 6.25px;
 }
 
 @media (min-width: 800px) {
-    .arrow {  
-        transform: translateX(-50%) translateY(-50%);
+    header {
+        background-image: url(./images/desktop/image-header.jpg);
+        height: 100vh;
+        padding: 0 40px;
+    }
+    header h1 {
+        font-size: 56px;
+    }
+}
+
+
+.arrow {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 500px) {
+    .arrow { 
+        top: 45%;
     }
 }
