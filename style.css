@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap');
+
+:root {
+ --accent-red: hsl(7, 99%, 70%);
+ --accent-yellow: hsl(51, 100%, 49%);
+ --dark-desaturated-cyan: hsl(167, 40%, 24%);
+ --dark-blue: hsl(198, 62%, 26%);
+ --dark-moderate-cyan: hsl(168, 34%, 41%);
+ --white: hsl(0, 0%, 100%);
+ --gray-blue: hsl(210, 4%, 67%);
+ --dark-gray-blue: hsl(232, 10%, 55%);
+ --very-dark-gray-blue:  hsl(213, 9%, 39%);
+ --very-dark-desaturated-blue: hsl(212, 27%, 19%);
+
+ --text-graphic-design-box: var(--dark-desaturated-cyan);
+ --text-photography: var(--dark-blue);
+ --footer-text: var(--dark-moderate-cyan);
+ --hero-text: var(--white);
+ --body-text: var(--very-dark-gray-blue);
+ --header-text: var(--very-dark-desaturated-blue);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Barlow', sans-serif;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+  }
+
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+container {
+    max-width: 1440px;
+}
+
+header {
+    background-image: url(./images/desktop/image-header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 80vh;
+    color: var(--white);
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 10%;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 56px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+}
+
+nav {
+    border: 2px solid pink;
+    width: 40%;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 34px 40px;
+    border: 2px solid red;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu a {
+    color: inherit;
+}
