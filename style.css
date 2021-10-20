@@ -49,6 +49,7 @@ a {
 .container {
     max-width: 1440px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .navbar {
@@ -228,7 +229,7 @@ header h1 {
 
 }
 
-.swap {
+.first {
     order:0; 
 }
 
@@ -238,6 +239,39 @@ header h1 {
 
 .content a {
     display: block;
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: .75em;
+    text-transform: uppercase;
+    padding-top: 2em;
+    color:  var(--header-text);
+    position:relative;
+}
+
+.content a::after {
+    content: '';
+    width: 105px;
+    height: .5rem;
+    display: inline-block;
+    background-color: hotpink;
+    position: absolute;
+    bottom: -.25em;
+    left: -.25em;
+    border-radius: 50px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.content a:hover::after {
+    opacity: 1;
+}
+
+.content.first a::after {
+    background-color: var(--accent-red);
+}
+
+.content.second a::after {
+    background-color: var(--accent-yellow);
 }
 
 .content > * {
@@ -263,11 +297,14 @@ header h1 {
     .row > * {
         width: 50%;
     }
-    .swap {
+    .first {
         order:-1; 
     }
     .content {
         padding: 120px;
+    }
+    .content > * {
+        text-align: left;
     }
     .single .content {
         margin: 0 auto;
